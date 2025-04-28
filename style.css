@@ -1,0 +1,123 @@
+/* ---------------------------------------
+   Theme Base CSS - For Khair Platform
+   Author: Khair
+   Last Updated: 2025
+------------------------------------------*/
+
+/* ========== FONTS ========== */
+/* Arabic: Tajawal / English: Poppins - Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tajawal:wght@400;700&display=swap');
+
+body {
+  font-family: 'Tajawal', 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  direction: rtl; /* تغيير ل ltr حسب اللغة */
+}
+
+/* ========== COLOR VARIABLES ========== */
+:root {
+  --color-1: #1b5870; /* RGB 27, 88, 112 */
+  --color-2: #0d4c69; /* RGB 13, 76, 105 */
+  --color-3: #3c7d9e; /* RGB 60, 125, 158 */
+  --color-4: #002c49; /* RGB 0, 44, 73 */
+  --color-5: #003454; /* RGB 0, 52, 84 */
+
+  --color-primary: var(--color-1);
+  --color-secondary: var(--color-2);
+  --color-accent: var(--color-3);
+  --color-dark: var(--color-4);
+  --color-deep: var(--color-5);
+
+  --color-bg: #f9f9f9;
+  --color-text: #222;
+}
+
+/* ========== GENERAL ELEMENTS ========== */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+}
+
+/* ========== FLIP CARD ========== */
+/* Usage: Wrap with .flip-card > .flip-card-inner > front/back */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.flip-card-front {
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  background-color: var(--color-secondary);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== AOS COMPATIBILITY ========== */
+/* Ensure AOS animations work normally */
+[data-aos] {
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ========== CUSTOM SECTIONS HERE ========== */
+/* أضف أي أقسام مخصصة لاحقاً حسب الحاجة */
