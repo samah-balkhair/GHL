@@ -128,3 +128,26 @@ button:hover {
 
 /* ========== CUSTOM SECTIONS HERE ========== */
 /* أضف أي أقسام مخصصة لاحقاً حسب الحاجة */
+
+/* الزر الرئيسي */
+.flip-button {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.flip-button:hover {
+  background-color: var(--primary-darker);
+}
+
+.flip-button i {
+  font-size: 1.1rem;
+}
